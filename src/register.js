@@ -86,6 +86,9 @@ function setAccount() {
     const stringifyAccount = JSON.stringify(account)
     localStorage.setItem("account", stringifyAccount)
 
-    console.table(account)
+    if(account.push(data)){
+        alert('akun berhasil dibuat');
+        window.location.href = 'login.html';
+    }
 }
 

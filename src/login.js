@@ -39,5 +39,6 @@ function login() {
     if(userAccount && userAccount.password == password){
         alert('berhasil login')
     }
-    console.table(account)
+    
+    window.location.href = 'index.html'
 }
