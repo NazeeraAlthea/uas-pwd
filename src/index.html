@@ -23,14 +23,67 @@
     </header>
     
     <main>
-        <div class="hero h-screen flex justify-center items-center bg-red-950 p-4">
+        <!-- <div class="hero h-screen flex justify-center items-center bg-red-950 p-4">
             <img src="" alt="">
             <div class="wrapper flex flex-col relative text-white">
                 <h1 class="text-5xl font-extrabold">D'KREMES</h1>
                 <span class="text-justify">D’Kremes adalah restoran yang menggabungkan cita rasa autentik masakan Indonesia dengan sentuhan modern. Restoran ini menawarkan berbagai hidangan tradisional dari berbagai daerah di Indonesia.</span>
                 <button class="bg-white w-min px-8 py-2 my-4 rounded border text-red-950 font-bold hover:text-white hover:bg-red-950"><a href="" class="">Order</a></button>
             </div>
+        </div> -->
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between py-20 bg-red-900">
+            <div class="text-center md:text-left md:w-1/2">
+              <h1 class="text-4xl font-bold mb-4 text-white">D'KREMES</h1>
+              <p class="mb-4 px-8 text-white">"D'Kremes adalah restoran yang menggabungkan cita rasa autentik masakan Indonesia dengan sentuhan modern. Restoran ini menawarkan berbagai hidangan tradisional dari berbagai daerah di Indonesia."</p>
+            </div>
+            <div class="md:w-1/2 mt-8 md:mt-0">
+                <img src="/src/assets/dkremes.png" alt="D'Kremes Dish" class="w-80 h-80 mx-auto">
+            </div>
+            <button class="bg-white text-red-900 font-bold py-2 px-4 rounded">Order</button>
+          </div>
+
+          <section class="mb-8 py-5 px-5">
+            <h2 class="text-2xl text-center font-bold mb-4">Menu</h2>
+
+            <div class="grid grid-cols-3 gap-3">
+                <div class="card bg-white shadow-md rounded-lg hover:shadow-lg">
+                    <img src="https://picsum.photos/200" alt="Image of Food" class="w-full h-24 object-cover rounded-t-lg">
+                    <div class="p-4">
+                        <h3 class="text-lg text-center font-medium mb-2">Food</h3>
+                        <a href="#" class="inline-block mt-2 text-sm font-medium text-blue-500 hover:text-blue-700">Lihat Lebih Banyak</a>
+                    </div>
+                </div>
+                <div class="card bg-white shadow-md rounded-lg hover:shadow-lg">
+                    <img src="https://picsum.photos/200" alt="Image of Food" class="w-full h-24 object-cover rounded-t-lg">
+                    <div class="p-4">
+                        <h3 class="text-lg text-center font-medium mb-2">Drink</h3>
+                        <a href="#" class="inline-block mt-2 text-sm font-medium text-blue-500 hover:text-blue-700">Lihat Lebih Banyak</a>
+                    </div>
+                </div>
+                <div class="card bg-white shadow-md rounded-lg hover:shadow-lg">
+                    <img src="https://picsum.photos/200" alt="Image of Food" class="w-full h-24 object-cover rounded-t-lg">
+                    <div class="p-4">
+                        <h3 class="text-lg text-center  font-medium mb-2">Snack</h3>
+                        <a href="#" class="inline-block mt-2 text-sm font-medium text-blue-500 hover:text-blue-700">Lihat Lebih Banyak</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="mx-4">
+            <iframe class="w-full h-64 rounded-md" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.7619090115804!2d106.80895807481237!3d-6.4246289628279705!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69e9822ea8dbbd%3A0x636b2797d864d693!2sJl.%20H.%20Satiri%20No.154%2C%20RT.%2F02%2FRW.%2F009%2C%20Ratu%20Jaya%2C%20Kec.%20Cipayung%2C%20Kota%20Depok%2C%20Jawa%20Barat%2016439!5e0!3m2!1sen!2sid!4v1720446998168!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
     </main>
+    
+    <footer class="bg-red-900 text-white text-center py-4">
+        <p>&copy; 2024 D'Kremes</p>
+        <div class="mt-2">
+          <a href="#" class="inline-block text-gray-300 hover:text-white">Facebook</a>
+          <span class="mx-2">|</span>
+          <a href="#" class="inline-block text-gray-300 hover:text-white">Instagram</a>
+          <span class="mx-2">|</span>
+          <a href="#" class="inline-block text-gray-300 hover:text-white">Twitter</a>
+        </div>
+    </footer>
 </body>
 </html>
