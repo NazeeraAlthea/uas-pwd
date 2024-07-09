@@ -1,0 +1,12 @@
+{
+    "foods" : [
+        {
+            "name" : "chicken butter",
+            "price" : 8000
+        },
+        {
+            "name" : "noodle",
+            "price" : 5000
+        }
+    ]
+}
