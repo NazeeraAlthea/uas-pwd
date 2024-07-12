@@ -9,13 +9,15 @@ function initializeHeader() {
                 <a class="text-white" href="">D'Kremes</a>
             </div>
 
-            <i id="menuButton" class="ti ti-align-justified"></i>
-            <div id="navbar" class="wrapper hidden flex-col bg-white fixed top-0 right-0 px-10 py-6 justify-center items-center text-red-950 m-4 shadow rounded gap-5">
-                <i class="ti ti-x absolute right-0 top-0 p-4"></i>
-                <a class="hover:underline" href="index.html">Home</a>
-                <a class="hover:underline" href="orderFoods.html">Order</a>
-                <a class="hover:underline" href="">Contact</a>
-                <a href="login.html" class="bg-red-950 text-white px-6 py-2 rounded border border-red-950 hover:bg-white hover:text-red-950">Login</a>
+            <i id="menuButton" class="ti ti-align-justified sm:hidden"></i>
+            <div id="navbar" class="wrapper sm:p-0 sm:flex sm:relative sm:shadow-none sm:flex-row sm:bg-transparent sm:text-white hidden flex-col bg-white fixed top-0 right-0 px-10 py-6 justify-center items-center text-red-950 m-4 shadow rounded gap-5">
+                <i class="sm:hidden ti ti-x absolute right-0 top-0 p-4"></i>
+                <div class="flex flex-col sm:flex-row gap-5 sm:gap-12 sm:fixed sm:left-1/2 sm:-translate-x-1/2">
+                    <a class="hover:underline" href="index.html">Home</a>
+                    <a class="hover:underline" href="orderFoods.html">Order</a>
+                    <a class="hover:underline" href="">Contact</a>
+                </div>
+                <a href="login.html" class="bg-red-950 sm:hover:text-white sm:hover:bg-red-950 sm:hover:border-white sm:bg-white sm:text-red-950 text-white px-6 py-2 rounded border border-red-950 hover:bg-white hover:text-red-950">Login</a>
             </div>
         </div>
     `;
@@ -60,9 +62,9 @@ function initializeUserHeader() {
                     <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
                     <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
                 </svg>
-                <i id="menuButtonAfter" class="ti ti-dots-vertical text-xl text-white ml-4"></i>
+                <i id="menuButtonAfter" class="ti ti-dots-vertical text-xl text-white ml-4 sm:hidden"></i>
             </div>
-            <div id="navbar" class="wrapper hidden flex-col bg-white text-red-950 m-4 shadow fixed top-0 right-0 px-10 py-6 justify-center items-center rounded gap-5 font-semibold transition-all duration-1000">
+            <div id="navbar" class="wrapper hidden sm:p-0 sm:flex sm:fixed sm:left-1/2 sm:-translate-x-1/2 sm:bg-transparent sm:text-white sm:gap-12 sm:font-normal sm:shadow-none sm:flex-row flex-col bg-white text-red-950 m-4 shadow fixed top-0 right-0 px-10 py-6 justify-center items-center rounded gap-5 font-semibold transition-all duration-1000">
                 <a class="hover:underline" href="index.html">Home</a>
                 <a class="hover:underline" href="orderFoods.html">Order</a>
                 <a class="hover:underline" href="">Contact</a>
