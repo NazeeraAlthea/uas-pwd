@@ -31,14 +31,21 @@ function login() {
     let account = JSON.parse(localStorage.getItem("account"));
 
     // userAccount mencari pengguna dari array account dan mencocokan apakah username sama dengan username yang didalam array
-    let userAccount = account.find(function(acc){
-        return acc.username === username
+    let userAccount = account.find(acc => {
+        let result = acc.username == username
+        console.log(acc.username, result)
+        return result;
     })
-
-    // userAccount yang sudah sama dengan input user dicocokan dengan mencari didalam array yaitu properti password
+          
+        // userAccount yang sudah sama dengan input user dicocokan dengan mencari didalam array yaitu properti password
     if(userAccount && userAccount.password == password){
         alert('berhasil login')
+    }else{
+        alert('invalid input')
+        return;
     }
+
+    localStorage.setItem('username', username);
     
     window.location.href = 'index.html'
 }

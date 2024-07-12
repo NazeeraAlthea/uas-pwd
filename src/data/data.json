@@ -1,0 +1,35 @@
+{
+    "foods" : [
+        {
+            "name" : "chicken butter",
+            "price" : 8000
+        },
+        {
+            "name" : "noodle",
+            "price" : 5000
+        },
+        {
+            "name" : "noodle",
+            "price" : 5000
+        },
+        {
+            "name" : "noodle",
+            "price" : 5000
+        },
+        {
+            "name" : "noodle",
+            "price" : 5000
+        },
+        {
+            "name" : "noodle",
+            "price" : 5000
+        }
+    ],
+
+    "drinks" : [
+        {
+            "name" : "juice",
+            "price" : 7000
+        }
+    ]
+}
