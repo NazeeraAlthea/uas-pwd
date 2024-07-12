@@ -1153,6 +1153,11 @@ video {
     left: 50%;
   }
 
+  .sm\:my-20 {
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+  }
+
   .sm\:flex {
     display: flex;
   }
