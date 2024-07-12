@@ -9,8 +9,8 @@ export async function displayItems(type) {
     let card = document.createElement('div');
 
     card.innerHTML = `
-    <div class="flex flex-col border shadow rounded relative gap-2 h-72">
-      <img class="object-cover" src="assets/pngtree-illustration-of-delicious-spicy-mortar-geprek-chicken-png-image_6564528 2.png" alt="">
+    <div class="flex flex-col border shadow rounded relative gap-2 h-80 sm:w-60">
+      <img class="object-cover h-3/5" src="assets/pngtree-illustration-of-delicious-spicy-mortar-geprek-chicken-png-image_6564528 2.png" alt="">
       <div class="flex flex-col items-center">
         <div class="font-semibold text-lg">${e.name}</div>
         <div class="text-red-700 font-bold">${e.price}</div>
