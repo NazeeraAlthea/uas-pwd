@@ -1,9 +1,14 @@
 {
     "foods" : [
         {
+<<<<<<< HEAD
             "name" : "chicken butter",
             "price" : 8000,
             "image" : "./assets/assets-product/pngtree-illustration-of-delicious-spicy-mortar-geprek-chicken-png-image_6564528 2.png"
+=======
+            "name" : "Dark Chicken Original",
+            "price" : 18000
+>>>>>>> a763700037d969d7e57c917d6918c73300d9504f
         },
         {
             "name" : "noodle",
