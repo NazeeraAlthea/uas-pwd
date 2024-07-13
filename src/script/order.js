@@ -9,13 +9,12 @@ export async function displayItems(type) {
     let card = document.createElement('div');
 
     card.innerHTML = `
-    <div class="flex flex-col border shadow rounded relative gap-2 h-80 sm:w-60">
-      <img class="object-cover h-3/5" src="${e.image}">
+    <div class="flex flex-col items-center border shadow rounded relative gap-2 h-80 sm:w-60">
+      <img class="object-cover h-3/5 w-full" src="${e.image}">
         <div class="font-semibold text-lg">${e.name}</div>
         <div class="text-red-700 font-bold">${e.price}</div>
-      </div>
 
-      <button class="orderButton bg-white text-red-950 border border-red-950 hover:bg-red-950 hover:text-white p-1 m-2 rounded font-semibold">Order</button>
+      <button class="orderButton bg-white text-red-950 border border-red-950 hover:bg-red-950 hover:text-white p-1 m-2 rounded font-semibold w-10/12">Order</button>
 
       <div class="displayProductOrder hidden items-center justify-center gap-4">
         <button class="reduceOrder flex border px-2 py-1 rounded border-black">-</button>

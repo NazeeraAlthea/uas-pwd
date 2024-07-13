@@ -7,7 +7,8 @@
         },
         {
             "name" : "noodle",
-            "price" : 5000
+            "price" : 5000,
+            "image" : "./assets/assets-product/Resep-Olahan-Ayam-yang-Lebih-Padat-Nutrisi-dan-Bergizi-.jpg.webp"
         },
         {
             "name" : "noodle",
