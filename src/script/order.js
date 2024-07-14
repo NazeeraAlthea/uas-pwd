@@ -20,7 +20,7 @@ export async function displayItems(type) {
 
       <div class="displayProductOrder ${savedOrders[e.name] ? 'flex' : 'hidden'} items-center justify-center gap-4">
         <button class="reduceOrder flex border px-2 py-1 rounded border-black">-</button>
-        <span class="totalOrder">0</span>
+        <span class="totalOrder">${savedOrders[e.name] || 0}</span>
         <button class="addOrder flex border px-2 py-1 rounded border-black">+</button>
       </div>
     </div>
