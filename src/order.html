@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
+</head>
+<body>
+    <header></header>
+    <nav></nav>
+
+    <aside class="hidden fixed h-fit sm:flex sm:flex-col w-fit justify-center gap-8 left-8 bottom-1/2 -translate-y-1/2 sm:">
+        <button class="foods">Foods</button>
+        <button class="drinks">Drinks</button>
+        <button class="snacks">Snacks</button>
+    </aside>
+    <main class="flex flex-col my-12 sm:my-20 px-4 items-center w-screen sm:w-10/12 mx-auto gap-5">
+        <aside class="flex sm:hidden w-full justify-center gap-8 pt-8 sm:">
+            <button class="foods">Foods</button>
+            <button class="drinks">Drinks</button>
+            <button class="snacks">Snacks</button>
+        </aside>
+        <div class="searchBar">
+            <input type="search" name="" id="" placeholder="search" class="py-2 px-4 outline-none bg-slate-50 my-2 rounded-full">
+        </div>
+
+        <div class="container grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2 w-fit rounded"></div>
+        
+    </main>
+    <div id="buyOrder" class="buyFields hidden fixed bottom-6 bg-white shadow border border-red-950 p-2 rounded text-red-950 mx-4">
+        <i class="ti ti-shopping-cart"></i>
+        <span><span id="displayPrice"></span></span>
+    </div>
+
+    <script src="script/order.js"></script>
+    <script src="script/header.js"></script>
+
+    <script type="module">
+        import { displayItems } from './script/order.js';
+        document.addEventListener('DOMContentLoaded', () => displayItems('foods'));
+
+        document.querySelectorAll('.foods').forEach(button => {
+            button.addEventListener('click', () => displayItems('foods'))
+        })
+
+        document.querySelectorAll('.drinks').forEach(button => {
+            button.addEventListener('click', () => displayItems('drinks'))
+        })
+
+        document.querySelectorAll('.snacks').forEach(button  => {
+            button.addEventListener('click', () => displayItems('snacks'))
+        })
+    </script>
+</body>
+</html>

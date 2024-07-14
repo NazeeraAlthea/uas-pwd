@@ -1,0 +1,37 @@
+{
+    "foods" : [
+        {
+            "name" : "chicken butter",
+            "price" : 8000,
+            "image" : "./assets/assets-product/pngtree-illustration-of-delicious-spicy-mortar-geprek-chicken-png-image_6564528 2.png"
+        },
+        {
+            "name" : "noodle",
+            "price" : 5000,
+            "image" : "./assets/assets-product/Resep-Olahan-Ayam-yang-Lebih-Padat-Nutrisi-dan-Bergizi-.jpg.webp"
+        },
+        {
+            "name" : "noodle",
+            "price" : 5000
+        },
+        {
+            "name" : "noodle",
+            "price" : 5000
+        },
+        {
+            "name" : "noodle",
+            "price" : 5000
+        },
+        {
+            "name" : "noodle",
+            "price" : 5000
+        }
+    ],
+
+    "drinks" : [
+        {
+            "name" : "juice",
+            "price" : 7000
+        }
+    ]
+}
