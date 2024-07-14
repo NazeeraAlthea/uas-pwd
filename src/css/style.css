@@ -1339,6 +1339,10 @@ video {
     align-items: center;
   }
 
+  .sm\:justify-center {
+    justify-content: center;
+  }
+
   .sm\:gap-12 {
     gap: 3rem;
   }
