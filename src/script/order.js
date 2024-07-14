@@ -63,14 +63,21 @@ export async function displayItems(type) {
         orderButton.classList.remove('hidden')
         displayProductOrder.classList.add('hidden')
       }
+      if(localStorage.getItem('total') == 0) {
+        buyOrder.classList.add('hidden')
+      }
     });
 
     if (savedOrders[e.name] > 0) {
       orderButton.classList.add('hidden');
       buyOrder.classList.remove('hidden')
-      displayPrice.classList.remove('hidden')
     }
 
+    if(localStorage.getItem('total') != 0) {
+      displayPrice.innerHTML = localStorage.getItem('total')
+    }
+
+    
     
   });
   
