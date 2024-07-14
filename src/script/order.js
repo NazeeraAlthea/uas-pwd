@@ -3,7 +3,9 @@ export async function displayItems(type) {
   const data = await response.json();
 
   const container = document.querySelector('.container');
-  container.innerHTML = '';  
+  container.innerHTML = ''; 
+  
+  let savedOrders = JSON.parse(localStorage.getItem('orders')) || {};
 
   data[type].map(e => {
     let card = document.createElement('div');
@@ -16,9 +18,9 @@ export async function displayItems(type) {
 
       <button class="orderButton bg-white text-red-950 border border-red-950 hover:bg-red-950 hover:text-white p-1 m-2 rounded font-semibold w-10/12">Order</button>
 
-      <div class="displayProductOrder hidden items-center justify-center gap-4">
+      <div class="displayProductOrder ${savedOrders[e.name] ? 'flex' : 'hidden'} items-center justify-center gap-4">
         <button class="reduceOrder flex border px-2 py-1 rounded border-black">-</button>
-        <span class="totalOrder">1</span>
+        <span class="totalOrder">${savedOrders[e.name] || 0}</span>
         <button class="addOrder flex border px-2 py-1 rounded border-black">+</button>
       </div>
     </div>
@@ -26,57 +28,86 @@ export async function displayItems(type) {
     
     container.appendChild(card);
 
-    let buyOrder = document.getElementById('buyOrder')
-    let orderButton = card.querySelector('.orderButton')
-    let displayProductOrder = card.querySelector('.displayProductOrder')
-    let totalOrder = card.querySelector('.totalOrder')
-    let addOrder = card.querySelector('.addOrder')
-    let reduceOrder = card.querySelector('.reduceOrder')
+    let buyOrder = document.getElementById('buyOrder');
+    let orderButton = card.querySelector('.orderButton');
+    let displayProductOrder = card.querySelector('.displayProductOrder');
+    let totalOrder = card.querySelector('.totalOrder');
+    let addOrder = card.querySelector('.addOrder');
+    let reduceOrder = card.querySelector('.reduceOrder');
+    let displayPrice = document.getElementById('displayPrice')
 
     orderButton.addEventListener('click', () => {
-      orderItems(e.price)
-      buyOrder.classList.remove('hidden')
-      displayProductOrder.classList.remove('hidden')
-      displayProductOrder.classList.add('flex')
-      orderButton.classList.add('hidden')
-    })
+      orderItems(e.price, e.name);
+      buyOrder.classList.remove('hidden');
+      displayProductOrder.classList.remove('hidden');
+      displayProductOrder.classList.add('flex');
+      orderButton.classList.add('hidden');
+      let x = parseInt(totalOrder.innerHTML) || 0;
+      x++;
+      totalOrder.innerHTML = x;
+    });
 
     addOrder.addEventListener('click', () => {
-      orderItems(e.price)
-      let x = parseInt(totalOrder.innerHTML) 
-      x++
-      totalOrder.innerHTML = x
+      orderItems(e.price, e.name);
+      let x = parseInt(totalOrder.innerHTML) || 0;
+      x++;
+      totalOrder.innerHTML = x;
     });
 
     reduceOrder.addEventListener('click', () => {
-      deleteItems(e.price)
-      let x = parseInt(totalOrder.innerHTML) 
-      x--
-      totalOrder.innerHTML = x
+      deleteItems(e.price, e.name);
+      let x = parseInt(totalOrder.innerHTML) || 0;
+      if (x > 0) x--;
+      totalOrder.innerHTML = x;
+      if(savedOrders[e.name] == 0) {
+        orderButton.classList.remove('hidden')
+        displayProductOrder.classList.add('hidden')
+      }
+      if(localStorage.getItem('total') == 0) {
+        buyOrder.classList.add('hidden')
+      }
     });
 
-    if(totalOrder.innerHTML == 0 ) {
-      displayProductOrder.classList.add('hidden')
-      alert(totalOrder.innerHTML)
+    if (savedOrders[e.name] > 0) {
+      orderButton.classList.add('hidden');
+      buyOrder.classList.remove('hidden')
     }
+
+    if(localStorage.getItem('total') != 0) {
+      displayPrice.innerHTML = localStorage.getItem('total')
+    }
+
+    
+    
   });
-
-  function orderItems(price) {
-    let displayPrice = document.getElementById('displayPrice')
+  
+  function orderItems(price, name) {
+    let displayPrice = document.getElementById('displayPrice');
     if (displayPrice) {
-      let currentPrice = parseFloat(displayPrice.innerText.replace(/[^0-9.-]+/g,"")) || 0;
-      let newPrice = parseFloat(price);
-      displayPrice.innerText = `Rp ${currentPrice + newPrice}`;
-      localStorage.setItem("total price", displayPrice.innerText)
+      let currentPrice = parseFloat(localStorage.getItem('total')) || 0;
+      let newPrice = currentPrice + price
+      localStorage.setItem('total', newPrice)
+      displayPrice.innerHTML = localStorage.getItem('total')
+      
+      savedOrders[name] = (savedOrders[name] || 0) + 1;
+      localStorage.setItem('orders', JSON.stringify(savedOrders));
     }
   }
 
-  function deleteItems(price) {
-    let displayPrice = document.getElementById('displayPrice')
-    if(displayPrice) {
-      let currentPrice = parseFloat(displayPrice.innerText.replace(/[^0-9.-]+/g,""));
+  function deleteItems(price, name) {
+    let displayPrice = document.getElementById('displayPrice');
+    if (displayPrice) {
+      let currentPrice = parseFloat(localStorage.getItem('total'));
       let newPrice = parseFloat(price);
-      displayPrice.innerText = `Rp ${currentPrice - newPrice}`;
+      let updatedPrice = currentPrice - newPrice;
+      localStorage.setItem("total", updatedPrice);
+      displayPrice.innerText = `${localStorage.getItem('total')}`;
+      
+      if (savedOrders[name] > 0) {
+        savedOrders[name]--;
+        localStorage.setItem('orders', JSON.stringify(savedOrders));
+      }
     }
   }
-} 
+
+}
