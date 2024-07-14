@@ -718,6 +718,10 @@ video {
   height: 60%;
 }
 
+.h-80 {
+  height: 20rem;
+}
+
 .h-fit {
   height: -moz-fit-content;
   height: fit-content;
@@ -729,18 +733,6 @@ video {
 
 .h-screen {
   height: 100vh;
-}
-
-.h-80 {
-  height: 20rem;
-}
-
-.h-1\/6 {
-  height: 16.666667%;
-}
-
-.h-4\/5 {
-  height: 80%;
 }
 
 .w-10\/12 {
