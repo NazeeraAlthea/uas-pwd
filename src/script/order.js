@@ -20,7 +20,7 @@ export async function displayItems(type) {
 
       <div class="displayProductOrder ${savedOrders[e.name] ? 'flex' : 'hidden'} items-center justify-center gap-4">
         <button class="reduceOrder flex border px-2 py-1 rounded border-black">-</button>
-        <span class="totalOrder">${savedOrders[e.name] || 1}</span>
+        <span class="totalOrder">0</span>
         <button class="addOrder flex border px-2 py-1 rounded border-black">+</button>
       </div>
     </div>
@@ -42,6 +42,9 @@ export async function displayItems(type) {
       displayProductOrder.classList.remove('hidden');
       displayProductOrder.classList.add('flex');
       orderButton.classList.add('hidden');
+      let x = parseInt(totalOrder.innerHTML) || 0;
+      x++;
+      totalOrder.innerHTML = x;
     });
 
     addOrder.addEventListener('click', () => {
@@ -92,8 +95,6 @@ export async function displayItems(type) {
       let updatedPrice = currentPrice - newPrice;
       localStorage.setItem("total", updatedPrice);
       displayPrice.innerText = `${localStorage.getItem('total')}`;
-      // if (updatedPrice > 0) {
-      // }
       
       if (savedOrders[name] > 0) {
         savedOrders[name]--;
