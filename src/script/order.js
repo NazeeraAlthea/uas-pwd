@@ -59,12 +59,13 @@ export async function displayItems(type) {
       let x = parseInt(totalOrder.innerHTML) || 0;
       if (x > 0) x--;
       totalOrder.innerHTML = x;
-      if(savedOrders[e.name] == 0) {
+      if(!savedOrders[e.name]) {
         orderButton.classList.remove('hidden')
         displayProductOrder.classList.add('hidden')
       }
       if(localStorage.getItem('total') == 0) {
         buyOrder.classList.add('hidden')
+        localStorage.removeItem('total')
       }
     });
 
@@ -108,6 +109,17 @@ export async function displayItems(type) {
         localStorage.setItem('orders', JSON.stringify(savedOrders));
       }
     }
+    if(savedOrders[name] == 0) {
+      delete savedOrders[name]
+      localStorage.setItem('orders', JSON.stringify(savedOrders))
+    }
+
+    // remove key orders
+    if(Object.keys(savedOrders).length === 0){
+      localStorage.removeItem('orders')
+    }
+    
+
   }
 
 }
