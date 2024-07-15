@@ -1,30 +1,67 @@
 {
     "foods" : [
         {
-            "name" : "chicken butter",
-            "price" : 8000,
-            "image" : "./assets/assets-product/pngtree-illustration-of-delicious-spicy-mortar-geprek-chicken-png-image_6564528 2.png"
+            "name" : "Dark Chicken Original",
+            "price" : 18000, 
+            "image" : "./assets/product-asset/original.png"
         },
         {
-            "name" : "noodle",
-            "price" : 5000,
-            "image" : "./assets/assets-product/Resep-Olahan-Ayam-yang-Lebih-Padat-Nutrisi-dan-Bergizi-.jpg.webp"
+            "name" : "Dark Chicken Bawang",
+            "price" : 18000,
+            "image" : "./assets/product-asset/bawang.png"
         },
         {
-            "name" : "ayam",
-            "price" : 5000,
-            "image" : "./assets/assets-product/Resep-Olahan-Ayam-yang-Lebih-Padat-Nutrisi-dan-Bergizi-.jpg.webp"
+            "name" : "Dark Chicken Tomat",
+            "price" : 18000,
+            "image" : "./assets/product-asset/romat.png"
+        },
+        {
+            "name" : "Dark Chicken Terasi",
+            "price" : 18000,
+            "image" : "./assets/product-asset/terasi.png"
+        },
+        {
+            "name" : "Dark Chicken Campur",
+            "price" : 18000,
+            "image" : "./assets/product-asset/campur.png"
+        },
+        {
+            "name" : "Bebek Goreng Sambal Bakar",
+            "price" : 20000,
+            "image" : "./assets/product-asset/bebek.png"
+        },
+        {
+            "name" : "Ikan Lele Sambal Bakar",
+            "price" : 18000,
+            "image" : "./assets/product-asset/lele.png"
         }
     ],
 
     "drinks" : [
         {
-            "name" : "juice",
-            "price" : 7000
+            "name" : "original tea",
+            "price" : 4000,
+            "image" : "./assets/product-asset/originaltea.png"
         },
         {
-            "name" : "alpukat",
-            "price" : 7000
+            "name" : "kampul tea",
+            "price" : 5000,
+            "image" : "./assets/product-asset/originaltea.png"
+        },
+        {
+            "name" : "lychee tea",
+            "price" : 6000,
+            "image" : "./assets/product-asset/lychee.png"
+        },
+        {
+            "name" : "lemon tea",
+            "price" : 6000,
+            "image" : "./assets/product-asset/lemon.png"
+        },
+        {
+            "name" : "peach tea",
+            "price" : 6000,
+            "image" : "./assets/product-asset/peach.png"
         }
     ]
 }

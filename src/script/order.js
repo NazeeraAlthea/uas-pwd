@@ -134,6 +134,7 @@ function showCart() {
   let cartContent = document.createElement('div');
   cartContent.style.width = "100%";
   cartContent.style.overflowY = "auto";
+  cartContent.className = "relative"
 
   cartContent.innerHTML = `
     <div class="flex w-full flex-col items-center justify-center p-4">
@@ -175,12 +176,12 @@ function showCart() {
   }
 
   let totalDisplay = document.createElement('div');
-  totalDisplay.className = "flex flex-col w-full items-center justify-end gap-2 p-4 mb-0 sticky bottom-0 mt-auto bg-white border border-gray-700 rounded-xl";
+  totalDisplay.className = "flex flex-col w-full items-center justify-end gap-2 p-4 absolute mb-0 mt-auto bottom-0 bg-white border border-gray-700 rounded-xl";
   totalDisplay.innerHTML = `
     <div class="flex justify-start w-full">
       <div>Total: Rp. ${totalPrice}</div>
     </div>
-    <button class="flex w-full border border-gray-700 rounded-lg p-2 items-center justify-center bg-red-900 text-white hover:bg-white hover:text-red-900"> Place Order </button>
+    <button class="flex w-full border border-gray-700 rounded p-2 items-center justify-center bg-red-900 text-white hover:bg-white hover:text-red-900"> Place Order </button>
   `;
   cartContent.appendChild(totalDisplay);
 
