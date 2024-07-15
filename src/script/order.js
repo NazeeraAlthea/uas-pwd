@@ -163,10 +163,9 @@ function showCart() {
             <img src="${item.image}" class="object-cover h-32 w-32 rounded">
             <div class="flex flex-col justify-center">
               <div class="font-semibold text-xl">${item.name}</div>
-              <div class="text-red-700 font-bold">Price: ${item.price}</div>
-              <div>Quantity: ${orders[itemName]}</div>
-              <div class="text-red-700 font-bold">Total: ${itemTotalPrice}</div>
+              <div class="text-red-700">${item.price}</div>
             </div>
+            <div class="mr-0 ml-auto font-semibold">${orders[itemName]}x</div>
           </div>
         `;
 
