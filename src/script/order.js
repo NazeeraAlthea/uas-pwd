@@ -13,17 +13,19 @@ export async function displayItems(type) {
     let card = document.createElement('div');
 
     card.innerHTML = `
-    <div class="flex flex-col items-center border shadow rounded relative gap-2 h-80 sm:w-60">
+    <div class="flex flex-col items-center border shadow rounded relative gap-2 h-96 sm:w-60"> 
       <img class="object-cover h-3/5 w-full" src="${e.image}">
-        <div class="font-semibold text-lg">${e.name}</div>
+      <div class="flex flex-col items-center justify-center h-2/5 w-full px-2">
+        <div class="font-semibold text-lg h-14">${e.name}</div>
         <div class="text-red-700 font-bold">${e.price}</div>
 
-      <button class="orderButton bg-white text-red-950 border border-red-950 hover:bg-red-950 hover:text-white p-1 m-2 rounded font-semibold w-10/12">Order</button>
+        <button class="orderButton bg-white text-red-950 border border-red-950 hover:bg-red-950 hover:text-white p-1 m-2 rounded font-semibold w-10/12 mb-2 mt-auto">Order</button>
 
-      <div class="displayProductOrder ${savedOrders[e.name] ? 'flex' : 'hidden'} items-center justify-center gap-4">
-        <button class="reduceOrder flex border px-2 py-1 rounded border-black">-</button>
-        <span class="totalOrder">${savedOrders[e.name] || 0}</span>
-        <button class="addOrder flex border px-2 py-1 rounded border-black">+</button>
+        <div class="displayProductOrder ${savedOrders[e.name] ? 'flex' : 'hidden'} items-center justify-center gap-4 mb-2 mt-auto">
+          <button class="reduceOrder flex border px-2 py-1 rounded border-black">-</button>
+          <span class="totalOrder">${savedOrders[e.name] || 0}</span>
+          <button class="addOrder flex border px-2 py-1 rounded border-black">+</button>
+        </div>
       </div>
     </div>
     `;
