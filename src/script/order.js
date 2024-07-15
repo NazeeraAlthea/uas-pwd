@@ -125,7 +125,6 @@ function deleteItems(price, name) {
   }
 }
 
-
 function showCart() {
   let cart = document.querySelector('.cart');
   let cartBox = document.getElementById('cartBox');
@@ -177,7 +176,6 @@ function showCart() {
 
   cartContentWrapper.appendChild(cartContent);
 
-  
   function alertBuy() {
     alert('berhasil membuat pesanan')
   }
@@ -197,28 +195,22 @@ function showCart() {
 
   cartBox.appendChild(cartContentWrapper);
 
-  if(document.getElementById('bayarPesanan').addEventListener('click', () => {
+  document.getElementById('bayarPesanan').addEventListener('click', () => {
     alert('pesanan telah dibuat')
     localStorage.removeItem('total')
     localStorage.removeItem('orders')
     cart.classList.add('hidden')
     cart.classList.remove('flex')
     window.location.reload()
-  }))
+  });
 
   document.addEventListener('click', (event) => {
-    if (!cartBox.contains(event.target) && !buyOrder.contains(event.target)) {
+    if (!cartBox.contains(event.target) && !buyOrder.contains(event.target) && !event.target.closest('.orderButton')) {
       cart.classList.add('hidden');
       cart.classList.remove('flex');
     }
-  
-
-
   });
-  
 }
-
-
 
 document.addEventListener('DOMContentLoaded', async () => {
   const response = await fetch('./data/data.json');
