@@ -11,26 +11,19 @@
             "image" : "./assets/assets-product/Resep-Olahan-Ayam-yang-Lebih-Padat-Nutrisi-dan-Bergizi-.jpg.webp"
         },
         {
-            "name" : "noodle",
-            "price" : 5000
-        },
-        {
-            "name" : "noodle",
-            "price" : 5000
-        },
-        {
-            "name" : "noodle",
-            "price" : 5000
-        },
-        {
-            "name" : "noodle",
-            "price" : 5000
+            "name" : "ayam",
+            "price" : 5000,
+            "image" : "./assets/assets-product/Resep-Olahan-Ayam-yang-Lebih-Padat-Nutrisi-dan-Bergizi-.jpg.webp"
         }
     ],
 
     "drinks" : [
         {
             "name" : "juice",
+            "price" : 7000
+        },
+        {
+            "name" : "alpukat",
             "price" : 7000
         }
     ]
