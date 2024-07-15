@@ -60,7 +60,7 @@ export async function displayItems(type) {
       let x = parseInt(totalOrder.innerHTML) || 0;
       if (x > 0) x--;
       totalOrder.innerHTML = x;
-      if (!savedOrders[e.name]) {
+      if (x == 0) {
         orderButton.classList.remove('hidden');
         displayProductOrder.classList.add('hidden');
       }
@@ -163,9 +163,10 @@ function showCart() {
             <img src="${item.image}" class="object-cover h-32 w-32 rounded">
             <div class="flex flex-col justify-center">
               <div class="font-semibold text-xl">${item.name}</div>
-              <div class="text-red-700 font-bold">${item.price}</div>
-              </div>
-            <div class="mr-0 ml-auto font-semibold">${orders[itemName]}x</div>
+              <div class="text-red-700 font-bold">Price: ${item.price}</div>
+              <div>Quantity: ${orders[itemName]}</div>
+              <div class="text-red-700 font-bold">Total: ${itemTotalPrice}</div>
+            </div>
           </div>
         `;
 
@@ -175,10 +176,10 @@ function showCart() {
   }
 
   let totalDisplay = document.createElement('div');
-  totalDisplay.className = "flex flex-col w-full items-center justify-end gap-2 p-4 sticky bottom-0 bg-white border border-gray-700 rounded-xl";
+  totalDisplay.className = "flex flex-col w-full items-center justify-end gap-2 p-4 mb-0 sticky bottom-0 mt-auto bg-white border border-gray-700 rounded-xl";
   totalDisplay.innerHTML = `
     <div class="flex justify-start w-full">
-      <div class="">Total: Rp. ${totalPrice}</div>
+      <div>Total: Rp. ${totalPrice}</div>
     </div>
     <button class="flex w-full border border-gray-700 rounded-lg p-2 items-center justify-center bg-red-900 text-white hover:bg-white hover:text-red-900"> Place Order </button>
   `;
