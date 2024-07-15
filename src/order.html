@@ -14,13 +14,11 @@
     <aside class="hidden fixed h-fit sm:flex sm:flex-col w-fit justify-center gap-8 left-8 bottom-1/2 -translate-y-1/2 sm:">
         <button class="foods">Foods</button>
         <button class="drinks">Drinks</button>
-        <button class="snacks">Snacks</button>
     </aside>
     <main class="flex flex-col my-12 sm:my-20 px-4 items-center w-screen sm:w-10/12 mx-auto gap-5">
         <aside class="flex sm:hidden w-full justify-center gap-8 pt-8 sm:">
             <button class="foods">Foods</button>
             <button class="drinks">Drinks</button>
-            <button class="snacks">Snacks</button>
         </aside>
         <div class="searchBar">
             
@@ -55,9 +53,6 @@
             button.addEventListener('click', () => displayItems('drinks'))
         })
 
-        document.querySelectorAll('.snacks').forEach(button  => {
-            button.addEventListener('click', () => displayItems('snacks'))
-        })
     </script>
 </body>
 </html>
