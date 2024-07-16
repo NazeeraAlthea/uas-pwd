@@ -40,14 +40,19 @@ export async function displayItems(type) {
     let displayPrice = document.getElementById('displayPrice');
 
     orderButton.addEventListener('click', () => {
-      orderItems(e.price, e.name);
-      buyOrder.classList.remove('hidden');
-      displayProductOrder.classList.remove('hidden');
-      displayProductOrder.classList.add('flex');
-      orderButton.classList.add('hidden');
-      let x = parseInt(totalOrder.innerHTML) || 0;
-      x++;
-      totalOrder.innerHTML = x;
+      if(localStorage.getItem('username')) {
+        orderItems(e.price, e.name);
+        buyOrder.classList.remove('hidden');
+        displayProductOrder.classList.remove('hidden');
+        displayProductOrder.classList.add('flex');
+        orderButton.classList.add('hidden');
+        let x = parseInt(totalOrder.innerHTML) || 0;
+        x++;
+        totalOrder.innerHTML = x;
+      }else {
+        window.location.href = "./login.html"
+      }
+
     });
 
     addOrder.addEventListener('click', () => {
@@ -80,9 +85,12 @@ export async function displayItems(type) {
     if (localStorage.getItem('total') != 0) {
       displayPrice.innerHTML = localStorage.getItem('total');
     }
+
   });
 
   buyOrder.addEventListener('click', showCart);
+
+  
 }
 
 function orderItems(price, name) {
@@ -124,6 +132,7 @@ function deleteItems(price, name) {
     localStorage.removeItem('orders');
   }
 }
+
 
 function showCart() {
   let cart = document.querySelector('.cart');
