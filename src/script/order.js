@@ -119,7 +119,7 @@ function deleteItems(price, name) {
     localStorage.setItem('orders', JSON.stringify(savedOrders));
   }
 
-  // Remove key orders if savedOrders is empty
+  // Remove key orders 
   if (Object.keys(savedOrders).length === 0) {
     localStorage.removeItem('orders');
   }
