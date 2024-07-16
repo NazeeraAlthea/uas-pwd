@@ -119,8 +119,5 @@ function logout() {
 }
 
 // Inisialisasi header sesuai status login
-if (localStorage.getItem('username')) {
-    initializeUserHeader();
-} else {
-    initializeHeader();
-}
+
+localStorage.getItem('username') ? initializeUserHeader() : initializeHeader()
