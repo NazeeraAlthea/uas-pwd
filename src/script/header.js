@@ -113,6 +113,8 @@ function initializeUserHeader() {
 // Fungsi logout
 function logout() {
     localStorage.removeItem('username');
+    localStorage.removeItem('orders');
+    localStorage.removeItem('total');
     location.reload();
 }
 
