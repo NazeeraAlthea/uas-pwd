@@ -1,5 +1,6 @@
 const header = document.querySelector('header');
 let userAccount = localStorage.getItem('username');
+let adminAccount = localStorage.getItem('admin')
 
 function initializeHeader() {
     header.innerHTML = `
@@ -47,7 +48,7 @@ function initializeHeader() {
     });
 }
 
-function initializeUserHeader() {
+function UserHeader() {
     header.innerHTML = `
         <div class="wrapper flex fixed justify-between items-center p-4 bg-red-900 w-full h-16 top-0 text-white z-30">
             <div class="logo">
@@ -78,6 +79,8 @@ function initializeUserHeader() {
             </div>
         </div>
     `;
+
+    
 
     const userButton = document.getElementById('userButton');
     const userSetting = document.getElementById('userSetting');
@@ -110,14 +113,65 @@ function initializeUserHeader() {
     });
 }
 
+
+function AdminHeader() {
+    header.innerHTML = `
+        <div class="wrapper flex fixed justify-between items-center p-4 bg-white w-full h-16 top-0 text-red-900 z-30 shadow">
+            <div class="logo">
+                <img src="" alt="">
+                <a class="text-red-900" href="">D'Kremes</a>
+            </div>
+
+            <div id="userButton" class="flex justify-center items-center px-6 py-4 gap-1 cursor-pointer">
+                <svg  xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-user-circle">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M12 12m-9 0a9 9 0 1 0 18 0a9 9 0 1 0 -18 0" />
+                    <path d="M12 10m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" />
+                    <path d="M6.168 18.849a4 4 0 0 1 3.832 -2.849h4a4 4 0 0 1 3.834 2.855" />
+                </svg>
+                <div class="">${adminAccount}</div>
+                
+            </div>
+            <div id="userSetting" class="wrapper hidden items-center bg-white fixed top-0 right-0 p-4 m-2 mt-14 shadow text-red-900 rounded ">
+                <button class="border border-red-900 px-4 py-2 rounded mt-3" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    `;
+
+    
+
+    const userButton = document.getElementById('userButton');
+    const userSetting = document.getElementById('userSetting');
+    const navbar = document.getElementById('navbar');
+
+    userButton.addEventListener('click', () => {
+        userSetting.classList.toggle('hidden');
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!navbar.contains(event.target) && !menuButtonAfter.contains(event.target)) {
+            navbar.classList.add('hidden');
+            navbar.classList.remove('flex');
+        }
+    });
+
+    document.addEventListener('click', (event) => {
+        if (!userSetting.contains(event.target) && !userButton.contains(event.target)) {
+            userSetting.classList.add('hidden');
+            userSetting.classList.remove('flex');
+        }
+    });
+}
 // Fungsi logout
 function logout() {
     localStorage.removeItem('username');
     localStorage.removeItem('orders');
     localStorage.removeItem('total');
-    location.reload();
+    localStorage.removeItem('admin');
+    window.location.href = 'index.html'
 }
 
 // Inisialisasi header sesuai status login
 
-localStorage.getItem('username') ? initializeUserHeader() : initializeHeader()
+localStorage.getItem('username') ? UserHeader() : initializeHeader();
+localStorage.getItem('admin') ? AdminHeader() : "";

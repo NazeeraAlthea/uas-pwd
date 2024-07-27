@@ -206,6 +206,12 @@ function showCart() {
 
   document.getElementById('bayarPesanan').addEventListener('click', () => {
     alert('pesanan telah dibuat')
+    let ordersList = JSON.parse(localStorage.getItem('orders'));
+    let customerList = localStorage.getItem('username')
+    let totalList = localStorage.getItem('total')
+    localStorage.setItem('orderList', JSON.stringify(ordersList))
+    localStorage.setItem('customerList',customerList)
+    localStorage.setItem('totalList',totalList)
     localStorage.removeItem('total')
     localStorage.removeItem('orders')
     cart.classList.add('hidden')
